@@ -7,39 +7,41 @@ public class ArbreMot {
         this.Right=null;
     } 
     public void AddMot(String ch) {
-        boolean b=true;
             ArbreMot B = new ArbreMot("100");
              ArbreMot A=this;
-            while((A.Left!=null || A.Right!=null)&& b==true) {
+            while(A!=null && (A.Left!=null || A.Right!=null)) {
                 if( A.M.Compare(ch)==1) {
-                    if(A.Left==null) {
-                        b=false;
-                    }
-                
+                 A=A.Left;
                  
                 }
                 else {
-                    if(A.Right==null) {
-                        b=false;
-                    }
+                   A=A.Right;
                 }
              }
         
-        if(A.M.Compare(ch)==1) {
-            A.Left=B;
-            System.out.println("Left after adding " +A.Left);
-            A.Left.M.mt=ch;
-            A.Left.Left=null;
-            A.Left.Right=null;
+        if(A!=null) {
+            if(A.M.Compare(ch)==1) {
+                A.Left=B;
+                System.out.println("Left after adding " +A.Left);
+                A.Left.M.mt=ch;
+                A.Left.Left=null;
+                A.Left.Right=null;
+            }
+            else {
+                A.Right=B;
+                A.Right.M.mt=ch;
+                A.Right.Left=null;
+                A.Right.Right=null;
+            }
+        
         }
         else {
-            A.Right=B;
-            A.Right.M.mt=ch;
-            A.Right.Left=null;
-            A.Right.Right=null;
+            A=B;
+            A.M.mt=ch;
+            A.Left=null;
+                A.Right=null;
         }
-    
-    }
+        }
     Mot S=new Mot (" ");
     public Mot Maximum(ArbreMot A) {
        
@@ -84,4 +86,5 @@ public class ArbreMot {
             AfficherArbre(A.Right);
         } 
     }
+   
 }

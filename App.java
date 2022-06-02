@@ -1,4 +1,4 @@
-// LARABA Yamina Nesrine Acad B groupe 2  202031043730
+// LARABA Yamina Nesrine Acad B groupe 2    202031043730
 
 
 
@@ -14,7 +14,7 @@ class App{
         Mot[] V;
         V= new Mot[100];
         TabMot T = new TabMot(100,V,0);
-       /*  System.out.println("Donnez le nombre des mots");
+         System.out.println("Donnez le nombre des mots");
         do {
              N=e.nextInt();
         }while(N<0 || N>100);
@@ -39,7 +39,7 @@ class App{
                  T.Tab[i].Affichage();
              }
          } 
- */
+ 
 
          ArbreMot A =null;
          System.out.println("Donnez le nombre des mots de l'arbre");
